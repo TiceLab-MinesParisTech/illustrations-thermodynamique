@@ -3,28 +3,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="940" height="640">
 	<style type="text/css">
 		.step1 {
-			display: none;
+			display: default;
 		}
 		.step2 {
-			display: none;
+			display: default;
 		}
 		.step3 {
-			display: none;
+			display: default;
 		}
 		.step4 {
-			display: none;
+			display: default;
 		}
 		.step5 {
-			display: none;
+			display: default;
 		}
 		.step6 {
-			display: none;
+			display: default;
 		}
 		.step7 {
-			display: none;
+			display: default;
 		}
 		.step8 {
-			display: none;
+			display: default;
 		}
 		svg_ {
 			border: 1px solid black;
