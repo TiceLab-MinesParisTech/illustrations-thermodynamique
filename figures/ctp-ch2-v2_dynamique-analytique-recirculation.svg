@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="920" height="480">
+	<style type="text/css">
+		text {
+			font-family: Arial;
+			font-size: 18px;
+			fill: black;
+		}
+		.box {
+			stroke-width: 2.5px;
+			stroke: black;
+			fill: #8b8180
+		}
+		.enclosure {
+			fill: none;
+			stroke: #444;
+			stroke-width: 1;
+			fill: #ddd;
+		}
+		.liquid {
+			fill: none;
+			stroke: #4169e1;
+			stroke-width: 2;
+			opacity: 0.6;
+		}
+		.barreau-magnetique {
+			stroke: #444;
+			stroke-width: 1px;
+			fill: #bbb;
+		}
+		.pipe {
+			fill: none;
+			stroke: #4169e1;
+			stroke-width: 3;
+			stroke-linejoin: round;
+		}
+		.pipe-marker {
+			marker-start: url(#arrow-head);
+			stroke: none;
+			stroke-width: 2.5;
+		}	
+		.arrow-head {
+			fill: black;
+		}
+		.arrow {
+			fill: none;
+			stroke-width: 2;
+			stroke: black;
+			marker-end: url(#arrow-head);
+		}
+		.mesure {
+			stroke-width: 1.5;
+			stroke: #888;
+		}
+	</style>
+
+	<defs>
+		<marker id="arrow-head" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M0 0 V4 L6 2 Z" class="arrow-end"/>
+		</marker>
+		<g id="barreau-magnetique">
+			<path d="M-25 0 H-2 A2 2 0 0 1 2 0 H25 A5 5 0 0 1 25 10 H2 A2 2 0 0 1 -2 10 H-25 A5 5 0 0 1 -25 0" class="barreau-magnetique"/>
+		</g>
+		<g id="cellule-equilibre">		
+			<rect x="-70" y="0" width="140" height="140" class="enclosure"/>
+			<path d="M-70 70 H70" class="liquid"/>
+			<path d="M-70 80 H70" stroke-dasharray="35 8 8 8 8" class="liquid"/>
+			<path d="M-70 90 H70" stroke-dasharray="0 4 4 8 40" class="liquid"/>
+			<path d="M-70 100 H70" stroke-dasharray="30 8 8 8 8" class="liquid"/>
+			<path d="M-70 110 H70" stroke-dasharray="4 4 8 20 8" class="liquid"/>
+		</g>
+		<g id="pompe">		
+			<path d="M0 20 L-30 50 H30 Z" class="enclosure"/>
+			<circle cx="0" cy="0" r="30" class="enclosure"/>
+		</g>
+		<g id="vanne-boucle">		
+			<circle cx="0" cy="0" r="28" class="enclosure"/>
+		</g>
+	</defs>
+
+	<g transform="translate(460, 30)">
+		<g><!-- pompe gauche => vanne -->
+			<path d="M-150 322 H-225 A10 10 0 0 1 -235 312 V200" class="pipe"/>
+			<path d="M-235 280 v-1" class="pipe-marker"/>
+		</g>
+		<g><!-- pompe droite => vanne -->
+			<path d="M150 322 H225 A10 10 0 0 0 235 312 V200" class="pipe"/>
+			<path d="M235 280 v-1" class="pipe-marker"/>
+			<text x="180" y="5" text-anchor="middle">recirculation de la phase vapeur</text>
+		</g>
+		<g><!-- vanne gauche => cellule -->
+			<path d="M-235 200 V40 A10 10 0 0 1 -225 30 H-60 A10 10 0 0 1 -50 40 V100" class="pipe"/>
+			<path d="M-150 30 h1" class="pipe-marker"/>
+			<text x="-180" y="5" text-anchor="middle">recirculation de la phase liquide</text>
+		</g>	
+		<g><!-- vanne droite => cellule -->
+			<path d="M235 200 V40 A10 10 0 0 0 225 30 H60 A10 10 0 0 0 50 40 V100" class="pipe"/>
+			<path d="M150 30 h-1" class="pipe-marker"/>
+		</g>
+		<g><!-- vanne gauche => boucle -->
+			<path d="M-265 200 V140 A10 10 0 0 0 -275 130 H-350" stroke-dasharray="100 8 8 8 8 8 8" class="pipe"/>
+			<path d="M-265 200 V260 A10 10 0 0 1 -275 270 H-350" stroke-dasharray="100 8 8 8 8 8 8" class="pipe"/>
+			<text x="-275" y="110" class="label" text-anchor="end">vers chromatographe</text>
+			<path d="M-265 245 v-1" class="pipe-marker"/>
+			<path d="M-300 130 h-1" class="pipe-marker"/>
+		</g>
+
+		<g><!-- vanne droite => boucle -->
+			<path d="M265 200 V140 A10 10 0 0 1 275 130 H350" stroke-dasharray="100 8 8 8 8 8 8" class="pipe"/>
+			<path d="M265 200 V260 A10 10 0 0 0 275 270 H350" stroke-dasharray="100 8 8 8 8 8 8" class="pipe"/>
+			<text x="275" y="110" class="label" text-anchor="start">vers chromatographe</text>
+			<path d="M265 245 v-1" class="pipe-marker"/>
+			<path d="M300 130 h1" class="pipe-marker"/>
+		</g>
+		<g>
+			<use xlink:href="#cellule-equilibre" x="0" y="100"/>
+			<text x="0" y="205" text-anchor="middle">phase liquide</text>
+			<text x="75" y="82" text-anchor="start">cellule d’équilibre</text>
+			<path d="M65 85 L20 120" class="arrow"/>
+		</g>
+		<g>
+			<use xlink:href="#barreau-magnetique" x="0" y="225"/>
+			<text x="60" y="280" text-anchor="start">agitateur</text>
+			<path d="M54 272 L12 238" class="arrow"/>
+		</g>
+		<g>
+			<use xlink:href="#pompe" x="-150" y="350"/>
+			<text x="-150" y="425" text-anchor="middle">pompe</text>
+		</g>
+		<g>
+			<use xlink:href="#pompe" x="150" y="350"/>
+		</g>
+		<g>
+			<use xlink:href="#vanne-boucle" x="-250" y="200"/>
+			<text x="-215" y="160" text-anchor="start">vanne à boucle</text>
+			<path d="M-215 165 L-240 190" class="arrow"/>
+		</g>
+		<g>
+			<use xlink:href="#vanne-boucle" x="250" y="200"/>
+		</g>
+		<g><!--cellule => pompe gauche -->
+			<path d="M-50 240 V340 A10 10 0 0 1 -60 350 H-150" class="pipe"/>
+			<path d="M-50 295 v1" class="pipe-marker"/>
+		</g>
+		<g><!--cellule => pompe droite-->
+			<path d="M50 240 V340 A10 10 0 0 0 60 350 H150" class="pipe"/>
+			<path d="M50 295 v1" class="pipe-marker"/>
+		</g>
+		<g>
+			<path d="M-10 100 V20" class="mesure"/>
+			<text x="-10" y="15" text-anchor="middle">T</text>
+		</g>
+		<g>
+			<path d="M10 100 V20" class="mesure"/>
+			<text x="10" y="15" text-anchor="middle">P</text>
+		</g>
+	</g>
+</svg>

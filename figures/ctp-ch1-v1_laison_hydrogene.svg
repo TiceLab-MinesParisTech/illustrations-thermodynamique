@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="640" height="400">
+	<style type="text/css">
+		svg_ {
+			border: 1px solid black;
+			background-color: #a2a2a2;
+		}
+		text {
+			fill: black;
+			font-family: Arial;
+			font-size: 16px;
+		}
+		.element {
+			stroke: black;
+			stroke-width: 2px;
+		}
+		.element text {
+			text-anchor: middle;
+			dominant-baseline: middle;
+			font-size: 20px;
+			stroke: white;
+		}
+		.element-O {
+			fill: red;
+		}
+		.element-H {
+			fill: #4169e1;
+		}
+		.liaison-covalente {
+			stroke: #ccc;
+			stroke-width: 4px;
+			stroke-dasharray: 8 8;
+		}
+		.liaison-H path {
+			stroke: red;
+			stroke-width: 4px;
+			stroke-dasharray: 1 2;
+			opacity: 0.5;
+		}
+		.liaison-H text {
+			stroke: white;
+			fill: white;
+			font-size: 20px;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+	<defs>
+		<g id="element-O" class="element element-O">
+			<circle cx="0" cy="0" r="40"/>
+			<text>O</text>
+		</g>
+		<g id="element-H" class="element element-H">
+			<circle cx="0" cy="0" r="25"/>
+			<text>H</text>
+		</g>
+		<g id="molecule-H2O-1">
+			<path class="liaison-covalente" d="M 0,0 L -92,-118"/>
+			<path class="liaison-covalente" d="M 0,0 L -92,118"/>
+			<g>
+				<use xlink:href="#element-O" x="0" y="0"/>
+				<text x="50" y="10" text-anchor="start" dominant-baseline="hanging">2δ−</text>
+			</g>
+			<g>
+				<use xlink:href="#element-H" x="-92" y="-118"/>
+				<text x="-125" y="-135" text-anchor="end">δ+</text>
+			</g>
+			<g>
+				<use xlink:href="#element-H" x="-92" y="118"/>
+				<text x="-125" y="135" text-anchor="end" dominant-baseline="hanging">δ+</text>
+			</g>
+		</g>
+		<g id="molecule-H2O-2">
+			<path class="liaison-covalente" d="M 0,0 H -150"/>
+			<path class="liaison-covalente" d="M 0,0 L 37,-145"/>
+			<g>
+				<use xlink:href="#element-O" x="0" y="0"/>
+				<text x="50" y="0" dominant-baseline="middle" text-anchor="start">2δ−</text>
+			</g>
+			<g>
+				<use xlink:href="#element-H" x="-150" y="0"/>
+				<text x="-185" y="10" dominant-baseline="hanging" text-anchor="end">δ+</text>
+			</g>
+			<g>
+				<use xlink:href="#element-H" x="37" y="-145"/>
+				<text x="75" y="-145" text-anchor="start">δ+</text>
+			</g>
+		</g>
+		<g id="schema">
+			<use xlink:href="#molecule-H2O-1" x="-100" y="0"/>
+			<use xlink:href="#molecule-H2O-2" x="250" y="0"/>
+			<g class="liaison-H">
+				<path d="M -50,0 H 65"/>
+				<text x="7.5" y="-15" text-anchor="middle">Liaison H</text>
+			</g>
+		</g>
+	</defs>
+	<use xlink:href="#schema" x="260" y="200"/>
+</svg>

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="650" height="680">
+	<style type="text/css">
+		.radiateur {
+			fill: none;
+			stroke: black;
+			stroke-width: 4;
+		}
+		.enclosure {
+			fill: none;
+			stroke: #444;
+			stroke-width: 1;
+			fill: #ddd;
+		}
+		.pipe {
+			fill: none;
+			stroke: #4169e1;
+			stroke-width: 2.5;
+			stroke-linejoin: round;
+		}
+		.pipe-marker {
+			marker-start: url(#arrow);
+			stroke: none;
+			stroke-width: 2.5;
+		}
+		.liquid {
+			fill: none;
+			stroke: #4169e1;
+			stroke-width: 2;
+			opacity: 0.6;
+		}
+		.em {
+			stroke: red;
+		}
+		text {
+			font-family: Arial;
+			font-size: 18px;
+			fill: #444;
+		}
+		.function-limit {
+			stroke: #444;
+			stroke-width: 2;
+			stroke-dasharray: 30 8 8 8 8 8;
+		}
+	</style>
+	<defs>
+		<marker id="arrow" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M0 0 V4 L6 2 Z" class="arrow"/>
+		</marker>
+		<g id="echangeur2">
+			<rect x="-20" y="0" width="65" height="100" class="enclosure"/>
+			<path d="M0 0 v10 l-6 5 l12 10 l-12 10 l12 10 l-12 10 l12 10 l-12 10 l12 10 l-6 5 v10" class="radiateur"/>
+			<path d="M25 0 v10 l-6 5 l12 10 l-12 10 l12 10 l-12 10 l12 10 l-12 10 l12 10 l-6 5 v10" class="radiateur"/>
+		</g>
+		<g id="valve">
+			<path d="M-15 0 H15 L0 15 Z" class="enclosure"/>
+			<path d="M-15 30 H15 L0 15 Z" class="enclosure"/>
+		</g>
+		<g id="reservoir">
+			<rect x="-25" width="75" height="80" rx="10" ry="10" class="enclosure"/>
+			<path d="M-25 25 H50" class="liquid"/>
+			<path d="M-25 32 H50" stroke-dasharray="35 8 8 8 8" class="liquid"/>
+			<path d="M-25 38 H50" stroke-dasharray="0 4 4 8 40" class="liquid"/>
+			<path d="M-25 45 H50" stroke-dasharray="30 8 8 8 8" class="liquid"/>
+			<path d="M-25 52 H50" stroke-dasharray="4 4 8 20 8" class="liquid"/>
+		</g>
+		<g id="compresseur">
+			<path d="M0 15 L65 0 V75 L0 60 Z" class="enclosure"/>
+		</g>
+		<g id="detendeur">
+			<path d="M0 0 L65 15 V60 L0 75 Z" class="enclosure"/>
+		</g>
+		<g id="echangeur">
+			<rect x="-20" y="0" width="40" height="90" class="enclosure"/>
+			<path d="M0 0 v10 l-6 5 l12 10 l-12 10 l12 10 l-12 10 l12 10 l-12 10 l6 5 v10" class="radiateur"/>
+		</g>
+	</defs>
+	<g>
+		<path d="M395 85 V25 A10 10 0 0 0 385 15 H240 A10 10 0 0 0 230 25 V145" class="pipe"/>
+		<path d="M310 15 h-1" class="pipe-marker"/>
+	</g>
+	<g>
+		<path d="M150 60 H180 H230" class="pipe" marker-mid="url(#arrow)"/>
+		<text x="45" y="60" class="label" text-anchor="start" dominant-baseline="middle">entrée d’air</text>
+	</g>
+	<path d="M175 195 V230 V260" class="pipe" marker-mid="url(#arrow)"/>
+	<g>
+		<use xlink:href="#compresseur" x="170" y="140"/>
+		<text x="45" y="175" class="label" text-anchor="start" dominant-baseline="middle">compresseur</text>
+	</g>
+	<g>
+		<use xlink:href="#echangeur" x="175" y="260"/>
+		<path d="M50 280 H150" stroke-dasharray="8 8 30 8" class="pipe"/>
+		<path d="M85 280 h-1" class="pipe-marker"/>
+		<path d="M50 345 H150" stroke-dasharray="8 8 30 8" class="pipe"/>
+		<path d="M80 345 h1" class="pipe-marker"/>
+		<text x="45" y="310" class="label" text-anchor="start" dominant-baseline="middle">eau</text>
+	</g>
+	<g>
+		<path d="M175 350 V375 A10 10 0 0 0 180 385 H285 A10 10 0 0 0 295 375 V70 A10 10 0 0 1 305 60 H360 A10 10 0 0 1 370 70 V85" class="pipe"/>
+		<path d="M230 385 h1" class="pipe-marker"/>
+		<path d="M330 60 h1" class="pipe-marker"/>
+		<path d="M295 200 v-1" class="pipe-marker"/>
+	</g>
+	<path d="M370 185 V245" class="pipe"/>
+	<path d="M370 345 V365 V400" class="pipe" marker-mid="url(#arrow)"/>
+	<path d="M370 500 V525" class="pipe"/>
+	<g>
+		<use xlink:href="#valve" x="370" y="525"/>
+		<text x="340" y="540" text-anchor="end" dominant-baseline="middle">vanne</text>
+	</g>
+	<path d="M370 555 V575" class="pipe"/>
+	<g>
+		<use xlink:href="#reservoir" x="370" y="575"/>
+		<text x="325" y="615" text-anchor="end" dominant-baseline="middle">réservoir</text>
+	</g>
+	<path d="M395 575 V540 V500" class="pipe" marker-mid="url(#arrow)"/>
+	<path d="M395 400 V360 V345" class="pipe" marker-mid="url(#arrow)"/>
+	<path d="M395 245 V230 V185" class="pipe" marker-mid="url(#arrow)"/>
+	<!--<g>
+		<path d="M382.5 715 V740" class="pipe"/>
+		<path d="M382.5 655 V685" class="pipe"/>
+		<use xlink:href="#valve" x="382.5" y="685"/>
+	</g>-->
+	<g>
+		<path d="M370 215 H385 A10 10 0 0 1 405 215 H465 A10 10 0 0 1 475 225 V255" class="pipe"/>
+		<path d="M440 215 h1" class="pipe-marker"/>
+	</g>
+	<g>
+		<path d="M530 300 V360 A10 10 0 0 1 520 370 H435 H395" class="pipe"/>
+		<path d="M480 370 h-1" class="pipe-marker"/>
+	</g>	
+	<g>
+		<use xlink:href="#detendeur" x="470" y="250"/>
+		<text x="550" y="285" class="label" text-anchor="start" dominant-baseline="middle">détendeur</text>
+	</g>
+	<g>
+		<use xlink:href="#echangeur2" x="370" y="85"/>
+		<use xlink:href="#echangeur2" x="370" y="245"/>
+		<use xlink:href="#echangeur2" x="370" y="400"/>
+		<text x="430" y="120" class="label" text-anchor="start" dominant-baseline="middle">échangeurs</text>
+	</g>
+	<g>
+		<path d="M340 390 H650" class="function-limit"/>
+		<text x="520" y="510" text-anchor="middle" dominant-baseline="middle" class="label">détente de<tspan x="520" dy="40">Joule-Thomson</tspan></text>
+	</g>
+</svg>

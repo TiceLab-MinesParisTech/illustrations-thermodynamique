@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="740" height="700">
+	<style type="text/css">
+		.triangle {
+			fill: white;
+			stroke: black;
+			stroke-width: 2px;
+		}
+		.limit {
+			fill: none;
+			stroke: black;
+			stroke-width: 2px;
+		}
+		.normale {
+			fill: none;
+			stroke: none;
+			stroke-width: 2px;
+		}
+		text {
+			font-family: Arial;
+			font-size: 30px;
+		}
+	</style>
+	<defs>
+		<path id="triangle" d="M-346.4 600 L346.4 600 L0 0 Z" class="triangle"/>
+		<clipPath id="clip">
+			<use xlink:href="#triangle"/>
+		</clipPath>
+		
+	</defs>
+	
+	<g transform="translate(370, 50)">
+		<use xlink:href="#triangle"/>
+		<g clip-path="url(#clip)" >
+			<!--<path d="M-227 600 L79 130" class="limit"/>-->
+			<path d="M-227 600 L-154 486" class="limit"/>
+			<path d="M-154 486 L19 221" class="limit"/>
+			<path d="M19 221 L79 130" class="limit"/>
+			
+			<path d="M19 221 L222 537" class="limit"/>
+			<path d="M222 537 L252 600" class="limit"/>
+			<path d="M-154 486 L222 537" class="limit"/>
+			<path d="M222 537 L300 518" class="limit"/>
+
+			<path d="M-154 486 L-184 435" class="normale"/>
+			<path d="M-180 392 L-125 291" class="normale"/>
+			<path d="M-154 486 C -184 435 -180 392 -125 291" class="limit"/>
+
+			<path d="M-125 291 L-71 217" class="normale"/>
+			<path d="M-41 212 L19 221" class="normale"/>
+			<path d="M-125 291 C -71 217 -41 212 19 221" class="limit"/>
+
+			<text x="0" y="130" text-anchor="middle">L</text>
+			<text x="20" y="430" text-anchor="middle">L1 − L2 − V</text>
+			<text x="0" y="560" text-anchor="middle">L1 − V</text>
+			<text x="-85" y="330" transform="rotate(-57 -85 330)" text-anchor="middle">L1 − L2</text>
+			<text x="277" y="570" text-anchor="middle">V</text>
+			<text x="150" y="360"  transform="rotate(60 150 360)" text-anchor="middle">L2 − V</text>
+		</g>
+		<text x="0" y="-15" text-anchor="middle">A</text>
+		<text x="-346" y="640" text-anchor="end">B</text>
+		<text x="346" y="640" text-anchor="start">C</text>
+	</g>
+</svg>

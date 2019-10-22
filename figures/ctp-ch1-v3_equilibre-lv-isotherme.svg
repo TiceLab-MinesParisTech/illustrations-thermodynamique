@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="740" height="670">
+	<style type="text/css">
+		.curve {
+			stroke-width: 6px;
+			fill: none;
+			stroke-linecap: round;
+		}
+		.bulle {
+			stroke: #4169e1;
+		}
+		.rosee {
+			stroke: red;
+		}
+		.line {
+			stroke-dasharray: 4;
+			stroke: black;
+			stroke-width: 1.5px;
+			fill: none;
+		}
+		.axis {
+			stroke: black;
+			stroke-width: 2.5px;
+			fill: none;
+			marker-end: url(#arrow);
+		}
+		text {
+			font-family: Arial;
+			font-size: 18px;
+		}
+		.x-legend {
+			text-anchor: middle;
+			dominant-baseline: hanging;
+		}
+		.y-legend {
+			text-anchor: end;
+			dominant-baseline: middle;
+		}
+		.indice {
+			text-anchor: start;
+			font-size: 14px;
+		}
+		.axes text {
+			font-size: 24px;
+		}
+		.phase-name {
+			fill: #eee;
+			font-size: 30px;
+			dominant-baseline: middle;
+			text-anchor: middle;
+		}
+		path.transfer {
+			stroke: #4169e1;
+			stroke-width: 8px;
+			opacity: 0.5;
+			marker-end: url(#transfer-arrow);
+		}
+		path.transfer-arrow {
+			fill: #4169e1;
+		}
+		.hidden {
+			display: none;
+		}
+	</style>
+	<defs>
+		<marker id="arrow" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M 0 0 V 4 L6 2 Z" class="arrow"/>
+		</marker>
+		<marker id="transfer-arrow" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M0 0 V4 L6 2 Z" class="transfer-arrow"/>
+		</marker>
+		<g id="axes" class="axes">
+			<g>
+				<path d="M 0 0 H 600" class="axis"/>
+				<text x="300" y="40" class="x-legend">Composition</text>
+			</g>
+			<g>
+				<path d="M 0 0 V -560" class="axis"/>
+				<text x="-40" y="-540" class="y-legend">P</text>
+			</g>
+		</g>
+		<g id="figure">
+			<use xlink:href="#axes" x="0" y="0"/>
+			<g>
+				<path id="courbe-bulle" d="M 0,-140 c 150,-160 365,-265 570,-325" class="curve bulle"/>
+				<text text-anchor="middle" x="320" y="-10"><textPath href="#courbe-bulle">Courbe de bulle</textPath></text>
+			</g>
+			<g>
+				<!--<path id="courbe-rosee" d="M 570,-465 c -150,250 -365,300 -570,325" class="curve rosee"/>-->
+				<path id="courbe-rosee" d="M 0,-140 c 205,-25 420,-75 570,-325" class="curve rosee"/>
+				<text text-anchor="middle" x="500" y="-10"><textPath href="#courbe-rosee">Courbe de rosée</textPath></text>
+			</g>
+			<g>
+				<g>
+					<path d="M 260,-260 V 0" class="line"/>
+					<text x="260" y="10" class="x-legend">z</text>
+				</g>
+				<g>
+					<path d="M 260,-260 H 0" class="line"/>
+					<path d="M 140,-260 V 0" class="line"/>
+					<text x="140" y="10" class="x-legend">x</text>
+					<text x="-20" y="-260" class="y-legend">P<tspan dx="2" dy="6" class="indice">équilibre</tspan></text>
+				</g>
+				<g>
+					<path d="M 260,-260 h 120 V 0" class="line"/>
+					<text x="380" y="10" class="x-legend">y</text>
+				</g>
+				<g>
+					<path d="M 570,-465 V 0" class="line"/>
+					<path d="M 570,-465 H 0" class="line"/>
+					<text x="570" y="10" class="x-legend">A pur</text>
+					<text x="-20" y="-465" class="y-legend">P<tspan dx="2" dy="6" class="indice">A</tspan></text>
+				</g>
+				<g>
+					<text x="0" y="10" class="x-legend">B pur</text>
+					<text x="-20" y="-140" class="y-legend">P<tspan dx="2" dy="6" class="indice">B</tspan></text>
+				</g>
+			</g>
+			<g>
+				<text x="200" y="-500" class="phase-name">Liquide</text>
+				<text x="470" y="-150" class="phase-name">Vapeur</text>
+				<text x="300" y="-290" class="phase-name" transform="rotate(-30 300,-290)">diphasique</text>
+			</g>
+			<g>
+				<path d="M250 -70 V -440" class="transfer hidden"/>
+				<path d="M350 -70 V -440" class="transfer hidden"/>
+			</g>
+		</g>
+	</defs>
+
+	<use xlink:href="#figure" x="105" y="590"/>
+
+
+</svg>

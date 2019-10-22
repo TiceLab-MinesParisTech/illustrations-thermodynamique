@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="700" height="550">
+	<style type="text/css">
+		svg_ {
+			border: 1px solid black;
+		}
+		.curve {
+			stroke: black;
+			stroke-width: 0.8px;
+			fill: none;
+		}
+		text {
+			font-family: Arial;
+			font-size: 20px;
+		}
+		.axis {
+			stroke: black;
+			stroke-width: 2.5px;
+			fill: none;
+			marker-end: url(#arrow);
+		}
+		.axis-title {
+			font-size: 20px;
+		}
+		text.etat {
+			font-size: 20px;
+			fill: white;
+		}
+		circle.point {
+			fill: red;
+			stroke: none;
+		}
+		text.point {
+			fill: red;
+			font-size: 7px;
+		}
+		path.transfer {
+			stroke: #4169e1;
+			stroke-width: 8px;
+			opacity: 0.5;
+			marker-end: url(#transfer-arrow);
+		}
+		path.transfer-arrow {
+			fill: #4169e1;
+		}
+		.em {
+			stroke: red;
+			stroke-width: 1.3px;
+		}
+	</style>
+	<defs>
+		<marker id="arrow" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M0 0 V4 L6 2 Z" class="arrow"/>
+		</marker>
+		<marker id="transfer-arrow" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M0 0 V4 L6 2 Z" class="transfer-arrow"/>
+		</marker>
+		<g id="diag" transform="scale(2.5, 2.5)">
+			<path d="M 0,0 C 25.68761,0 45.51773,-29.55739 51.376,-39.82102" class="curve"/>
+			<path d="M 51.376,-39.82102 C 85.69993,-50.71256 119.241283,-72.68912 151.289533,-115.81936" class="curve em"/>
+			<path d="M 51.376,-39.82102 l -9.1,-133.9" class="curve"/>
+			<g>
+				<circle cx="51.376" cy="-39.82102" r="2" class="point"/>
+				<text x="56" y="-30" text-anchor="start" dominant-baseline="baseline" class="point">point triple</text>
+			</g>
+			<g>
+				<circle cx="151.289533" cy="-115.81936" r="2" class="point"/>
+				<text x="158" y="-120" text-anchor="start" dominant-baseline="baseline" class="point">point critique</text>
+			</g>
+		</g>
+		<g id="axes">
+			<path d="M -10,0 H 600" class="axis"/>
+			<text x="590" y="25" text-anchor="end" dominant-baseline="baseline" class="axis-title">température</text>
+			<path d="M 0,10 V -450" class="axis"/>
+			<text x="-18" y="-440" text-anchor="end" dominant-baseline="baseline" transform="rotate(-90 -18,-440)" class="axis-title">pression</text>
+		</g>
+		<g id="schema">
+			<use xlink:href="#diag" x="0" y="0"/>
+			<use xlink:href="#axes" x="0" y="0"/>
+			<g>
+				<text x="60" y="-150" text-anchor="middle" class="etat">solide</text>
+				<text x="220" y="-240" text-anchor="middle" class="etat">liquide</text>
+				<text x="400" y="-150" text-anchor="middle" class="etat">gaz
+					<tspan x="400" dy="25">(vapeur)</tspan>
+				</text>
+				<text x="440" y="-375" text-anchor="start" dominant-baseline="middle" class="etat">supercritique</text>
+			</g>
+		</g>
+	</defs>
+	<use xlink:href="#schema" x="50" y="490"/>
+</svg>

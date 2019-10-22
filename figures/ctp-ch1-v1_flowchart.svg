@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="860" height="650">
+	<style type="text/css">
+		text {
+			font-family: Arial;
+			font-size: 18px;
+			fill: white;
+		}
+		.box {
+			stroke-width: 2.5px;
+			stroke: black;
+			fill: #8b8180
+		}
+		.label {
+			text-anchor: middle;
+			dominant-baseline: middle;
+			fill: white;
+			font-size: 24px;
+ 		}
+		.case {
+			fill: white;
+ 		}
+		.link {
+			fill: none;
+			stroke: black;
+			stroke-width: 3.5px;
+		}
+	</style>
+		
+	<g>
+		<rect x="180" y="10" width="160" height="100" rx="50" class="box"/>
+		<text x="260" y="60" class="label">Molécules</text>
+	</g>
+	<path d="M260 110 V160" class="link"/>
+	<g>
+		<path d="M260 160 l100 60 l-100 60 l-100 -60 Z" class="box"/>
+		<text x="260" y="220" class="label">Polaire ?</text>
+	</g>
+	<path d="M160 220 H90 V330" class="link"/>
+	<text x="130" y="200" class="label case">non</text>
+	<g>
+		<rect x="10" y="330" width="160" height="95" class="box"/>
+		<text x="90" y="360" class="label">Forces de<tspan x="90" dy="30" class="label">London</tspan></text>
+	</g>
+	<path d="M360 220 H440 V300" class="link"/>
+	<text x="390" y="200" class="label case">oui</text>
+	<g>
+		<path d="M440 300 l150 85 l-150 85 l-150 -85 Z" class="box"/>
+		<text x="440" y="340" class="label">Atome<tspan x="440" dy="30" class="label">lié à N, O ou F</tspan><tspan x="440" dy="30" class="label">par une liaison</tspan><tspan x="440" dy="30" class="label">H ?</tspan></text>
+	</g>
+	<path d="M440 470 V550" class="link"/>
+	<text x="470" y="505" class="label case">non</text>
+	<g>
+		<rect x="320" y="550" width="240" height="90" class="box"/>
+		<text x="440" y="580" class="label">Forces de Keesom<tspan x="440" dy="30" class="label">ou de Debye</tspan></text>
+	</g>
+	<path d="M590 385 H670" class="link"/>
+	<text x="620" y="365" class="label case">oui</text>
+	<g>
+		<rect x="670" y="345" width="180" height="80" class="box"/>
+		<text x="760" y="385" class="label">Liaison H</text>
+	</g>
+
+</svg>

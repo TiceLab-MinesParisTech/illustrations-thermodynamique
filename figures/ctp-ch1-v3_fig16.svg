@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="cht-ch1-v3_fig16.css"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="870" height="550">
+	<style type="text/css">
+		rect {
+			fill: #ddd;
+			stroke: black;
+			stroke-width: 3px;
+		}
+		text {
+			font-family: Arial;
+			font-size: 16px;
+		}
+		path.arrow {
+			stroke: #000;
+			stroke-width: 3px;
+			fill: none;
+			marker-end: url(#arrow_head);
+		}
+		path.arrow_head {
+			fill: black;
+		}
+		g.box > text {
+			text-anchor: middle;
+			dominant-baseline: middle;
+		}
+		text.label {
+		}
+	</style>
+	<defs>
+		<marker id="arrow_head" markerWidth="6" markerHeight="4" refX="1" refY="2" orient="auto">
+			<path d="M0 0 V4 L6 2 Z" class="arrow_head"/>
+		</marker>
+	</defs>
+	<g class="box" transform="translate(80, 200)">
+		<rect x="-70" y="-40" width="140" height="80"/>
+		<text x="0" y="0" text-anchor="middle">TYPE I</text>
+	</g>
+	<g class="box" transform="translate(320, 50)">
+		<rect x="-70" y="-40" width="140" height="80"/>
+		<text x="0" y="0" text-anchor="middle">TYPE V</text>
+	</g>
+	<g class="box" transform="translate(320, 350)">
+		<rect x="-70" y="-40" width="140" height="80"/>
+		<text x="0" y="0" text-anchor="middle">TYPE II</text>
+	</g>
+	<g class="box" transform="translate(320, 500)">
+		<rect x="-70" y="-40" width="140" height="80"/>
+		<text x="0" y="0" text-anchor="middle">TYPE VI</text>
+	</g>
+	<g class="box" transform="translate(570, 200)">
+		<rect x="-70" y="-40" width="140" height="80"/>
+		<text x="0" y="0" text-anchor="middle">TYPE IV</text>
+	</g>
+	<g class="box" transform="translate(790, 200)">
+		<rect x="-70" y="-40" width="140" height="80"/>
+		<text x="0" y="0" text-anchor="middle">TYPE III</text>
+	</g>
+	<g><!-- I => V -->
+		<path class="arrow" d="M80 160 V50 H235"/>
+		<text class="label" x="80" y="30" text-anchor="middle">Effet de taille (T)</text>
+	</g>
+	<g><!-- I => II -->
+		<path class="arrow" d="M80 240 V350 H235"/>
+		<text class="label" x="80" y="380" text-anchor="middle">
+			<tspan>Effet dû aux</tspan>
+			<tspan x="80" y="400">aux interactions</tspan>
+			<tspan x="80" y="420">moléculaires (IM)</tspan>
+		</text>
+	</g>
+	<g><!-- II => VI -->
+		<path class="arrow" d="M320 390 V445"/>
+		<text class="label" x="340" y="420" text-anchor="start" dominant-baseline="middle">Liaisons hydrogène</text>
+	</g>
+	<g><!-- V => IV -->
+		<path class="arrow" d="M390 50 H570 V145"/>
+		<text class="label" x="570" y="30" text-anchor="middle">Effet dû aux intéractions moléculaires (IM)</text>
+	</g>
+	<g><!-- II => IV -->
+		<path class="arrow" d="M390 350 H570 V255"/>
+		<text class="label" x="570" y="380" text-anchor="middle">Effet de taille (T)</text>
+	</g>
+	<g><!-- IV => III -->
+		<path class="arrow" d="M640 200 H705"/>
+		<text class="label" x="680" y="225" text-anchor="middle">IM + T</text>
+	</g>
+</svg>
